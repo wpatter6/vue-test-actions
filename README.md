@@ -33,7 +33,7 @@ export FETCH_PRODUCT_FAILURE = 'FETCH_PRODUCT_FAILURE'
 #### actions.ts
 ```typescript
 import { ActionTree } from 'vuex'
-import constants from './constants'
+import * as constants from './constants'
 
 const actions: ActionTree<Store.Product, Store.Root> = {
   async fetchProduct(context, payload: number) {
@@ -53,7 +53,7 @@ export default actions
 ```typescript
 import testAction from '@onedaycat/vue-test-actions'
 import actions from './actions'
-import constants from './constants'
+import * as constants from './constants'
 
 it('should fetch product success', () => {
   const actionPayload = 1
