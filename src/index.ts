@@ -1,4 +1,4 @@
-export type Action = (context: any, payload?: any) => any
+export type Action = any
 export type Mutations = Mutation[]
 
 export interface Mutation {
