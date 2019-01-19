@@ -1,0 +1,42 @@
+{
+  "name": "@onedaycat/vue-test-actions",
+  "version": "1.0.0",
+  "description": "A utility to unit test Vuex actions",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf lib",
+    "build": "tsc",
+    "test": "jest --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onedaycat/vue-test-actions.git"
+  },
+  "author": "Onedaycat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onedaycat/vue-test-actions/issues"
+  },
+  "homepage": "https://github.com/onedaycat/vue-test-actions#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "typescript",
+    "vue",
+    "vuex"
+  ],
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "coveralls": "^3.0.2",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  }
+}

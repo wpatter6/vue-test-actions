@@ -1,0 +1,18 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.ts"
+  ],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "ES6",
+    "module": "CommonJS",
+    "declaration": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "lib"
+  }
+}
