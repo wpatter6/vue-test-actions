@@ -55,7 +55,7 @@ import testAction from '@onedaycat/vue-test-actions'
 import actions from './actions'
 import * as constants from './constants'
 
-it('should fetch product success', () => {
+it('should fetch product success', async () => {
   const actionPayload = 1
   const expectedMutations = [{
     type: constants.FETCH_PRODUCT_BEGIN,
@@ -64,7 +64,7 @@ it('should fetch product success', () => {
     payload: actionPayload,
   }]
 
-  testAction(actions.fetchProduct, expectedMutations, actionPayload)
+  await testAction(actions.fetchProduct, expectedMutations, actionPayload)
 })
 ```
 
