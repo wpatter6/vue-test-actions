@@ -19,7 +19,7 @@ yarn add @onedaycat/vue-test-actions
 ```typescript
 import testAction from '@onedaycat/vue-test-actions'
 
-const value = await testAction(ACTION, EXPECTED_MUTATIONS, ACTION_PAYLOAD, STORE)
+const value = await testAction(ACTION, EXPECTED_MUTATIONS, EXPECTED_DISPATCHS, ACTION_PAYLOAD, STORE)
 ```
 
 ## Example
@@ -64,7 +64,9 @@ it('should fetch product success', async () => {
     payload: actionPayload,
   }]
 
-  await testAction(actions.fetchProduct, expectedMutations, actionPayload)
+  const expectedDispatchs = []
+
+  await testAction(actions.fetchProduct, expectedMutations, expectedDispatchs, actionPayload)
 })
 ```
 
