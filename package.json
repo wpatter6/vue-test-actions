@@ -1,6 +1,6 @@
 {
   "name": "@onedaycat/vue-test-actions",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A utility to unit test Vuex actions",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "rm -rf lib",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest --silent"
   },
   "repository": {
     "type": "git",

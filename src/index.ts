@@ -32,7 +32,7 @@ const testAction = async (action: Action, expectedMutations: Mutations = [], exp
         await expect(type).toEqual(mutation.type)
 
         if (payload) {
-          expect(payload).toEqual(mutation.payload)
+          await expect(payload).toEqual(mutation.payload)
         }
       }
     } catch (e) {
