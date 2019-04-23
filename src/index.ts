@@ -21,7 +21,7 @@ export interface Store {
   rootGetters?: {},
 }
 
-const testAction = async <P = any>(action: Action, expectedMutations: Mutations = [], expectedDispatchs: Dispatchs = [], actionPayload?: P, store?: Store) => {
+const testAction = async (action: Action, expectedMutations: Mutations = [], expectedDispatchs: Dispatchs = [], actionPayload?: any, store?: Store) => {
   let countMutation: number = 0
   let countDispatch: number = 0
 

@@ -23,25 +23,27 @@ const value = await testAction(ACTION, EXPECTED_MUTATIONS, EXPECTED_DISPATCHS, A
 ```
 
 ## Example
-#### constants.ts
+#### types.ts
 ```typescript
-export FETCH_PRODUCT_BEGIN = 'FETCH_PRODUCT_BEGIN'
-export FETCH_PRODUCT_SUCCESS = 'FETCH_PRODUCT_SUCCESS'
-export FETCH_PRODUCT_FAILURE = 'FETCH_PRODUCT_FAILURE'
+export enum Mutations {
+  FETCH_PRODUCT_BEGIN = 'fetchProductBegin',
+  FETCH_PRODUCT_SUCCESS = 'fetchProductSuccess',
+  FETCH_PRODUCT_FAILURE = 'fetchProductFailure',
+}
 ```
 
 #### actions.ts
 ```typescript
 import { ActionTree } from 'vuex'
-import * as constants from './constants'
+import { Mutations } from './types'
 
 const actions: ActionTree<Store.Product, Store.Root> = {
   async fetchProduct(context, payload: number) {
-    context.commit(constants.FETCH_PRODUCT_BEGIN)
+    context.commit(Mutations.FETCH_PRODUCT_BEGIN)
     try {
-      context.commit(constants.FETCH_PRODUCT_SUCCESS, payload)
+      context.commit(Mutations.FETCH_PRODUCT_SUCCESS, payload)
     } catch (e) {
-      context.commit(constants.FETCH_PRODUCT_FAILURE, e)
+      context.commit(Mutations.FETCH_PRODUCT_FAILURE, e)
     }
   },
 }
@@ -51,16 +53,16 @@ export default actions
 
 #### actions.test.ts
 ```typescript
+import { Mutations } from './types'
 import testAction from '@onedaycat/vue-test-actions'
 import actions from './actions'
-import * as constants from './constants'
 
 it('should fetch product success', async () => {
   const actionPayload = 1
   const expectedMutations = [{
-    type: constants.FETCH_PRODUCT_BEGIN,
+    type: Mutations.FETCH_PRODUCT_BEGIN,
   }, {
-    type: constants.FETCH_PRODUCT_SUCCESS,
+    type: Mutations.FETCH_PRODUCT_SUCCESS,
     payload: actionPayload,
   }]
 
